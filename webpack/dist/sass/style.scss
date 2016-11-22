@@ -1,0 +1,67 @@
+/* Colors */
+$main: #005a9e;
+$gray: #333;
+
+/* Elements */
+h1 {
+    color: $main;
+
+    b {
+        border-right: 1px solid $main;
+        margin-right: 5px;
+        padding-right: 5px;
+
+        &:last-child {
+            border-right: 0;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        clear: both;
+        margin-bottom: 10px;
+
+        &:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: " ";
+            clear: both;
+            height: 0;
+        }
+    }
+}
+
+.tweets {
+    margin: 0;
+}
+
+.tweet {
+    .avatar {
+        float: left;
+        width: 60px;
+    }
+
+    img {
+        border: 2px solid $gray;
+        border-radius: 50px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+.handle {
+    font-weight: bold;
+
+    &:after {
+        content: "•";
+        margin: 0 5px;
+    }
+}

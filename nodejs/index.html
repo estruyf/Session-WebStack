@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Node.js server demo</title>
+    </head>
+    <body>
+        <h1>Show tweets about <b>#Office365</b> | <b>#SharePoint</b> | <b>#SPSGeneva</b> | <b>JavaScript</b></h1>
+        <ul class="tweets">
+
+        </ul>
+
+        <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <script>
+            var socket = io('http://localhost:80');
+            var tweetsElm = document.querySelector('.tweets');
+            
+            if (tweetsElm !== null) {
+                socket.on('tweet', (tweet) => {
+                    if (tweet !== null) {
+                        tweetsElm.innerHTML = `<li>${tweet.text} - ${tweet.user.screen_name}</li>${tweetsElm.innerHTML}`;
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>

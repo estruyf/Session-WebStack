@@ -1,0 +1,39 @@
+{
+  "name": "webstack-session",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Elio Struyf <info@estruyf.be> (http://www.eliostruyf.com)",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.16.0",
+    "node-tweet-stream": "^2.0.1",
+    "office-ui-fabric-react": "^0.74.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "socket.io": "^1.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^0.14.50",
+    "@types/react-dom": "^0.14.19",
+    "@types/socket.io": "^1.4.27",
+    "@types/socket.io-client": "^1.4.28",
+    "browser-sync": "^2.18.2",
+    "css-loader": "^0.26.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-express": "^0.3.5",
+    "gulp-sass": "^2.3.2",
+    "gulp-typescript": "^3.1.3",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^1.2.2",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
