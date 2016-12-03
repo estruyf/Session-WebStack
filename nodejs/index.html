@@ -13,13 +13,42 @@
         <script>
             var socket = io('http://localhost:80');
             var tweetsElm = document.querySelector('.tweets');
-            
-            if (tweetsElm !== null) {
-                socket.on('tweet', (tweet) => {
-                    if (tweet !== null) {
-                        tweetsElm.innerHTML = `<li>${tweet.text} - ${tweet.user.screen_name}</li>${tweetsElm.innerHTML}`;
-                    }
-                });
+
+            if (typeof(Storage) !== "undefined") {
+                var tweets = getLocalTweets();
+                if (tweets.length > 0) {
+                    tweets.reverse().forEach((tweet) => {
+                        renderTweet(tweetsElm, tweet);
+                    });
+                }
+
+                if (tweetsElm !== null) {
+                    socket.on('tweet', function (tweet) {
+                        var tweets = getLocalTweets();
+                        if (tweet !== null) {
+                            tweets.unshift(tweet);
+                            setLocalTweets(tweets);
+                            renderTweet(tweetsElm, tweet);
+                        }
+                    });
+                }
+            }
+
+            function renderTweet (elm, tweet) {
+                elm.innerHTML = `<li>${tweet.text} - ${tweet.user.screen_name}</li>${elm.innerHTML}`;
+            }
+
+            function getLocalTweets () {
+                var tweetsString = localStorage.getItem("tweets");
+                var tweets = JSON.parse(tweetsString);
+                return tweets !== null ? tweets : [];
+            }
+
+            function setLocalTweets (tweets) {
+                if (tweets.length >= 15) {
+                    tweets = tweets.slice(0, 14);
+                }
+                localStorage.setItem("tweets", JSON.stringify(tweets));
             }
         </script>
     </body>

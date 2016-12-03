@@ -1,5 +1,6 @@
 const http = require('http');
 const fs = require('fs');
+const open = require('open');
 
 fs.readFile('./nodejs/index.html', (err, html) => {
     if (err) {
@@ -18,5 +19,7 @@ fs.readFile('./nodejs/index.html', (err, html) => {
         }
         
         console.log('Server is listening on 8080');
+
+        open("http://localhost:8080");
     });
 });

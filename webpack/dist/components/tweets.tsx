@@ -2,27 +2,35 @@ import * as React from "react";
 import * as io from 'socket.io-client';
 import * as moment from 'moment';
 
+import { ITweet } from '../../../gulp/ts/ITweet';
+import * as TweetHelper from '../helper/TweetHelper';
+
 const socket = io('http://localhost:80');
 
 interface properties {}
 
 interface componentState {
-    tweets: any
+    tweets: ITweet[]
 }
 
 class Tweets extends React.Component<properties, componentState> {
-    private tweets: any[] = [];
+    private tweets: ITweet[] = [];
 
     constructor () {
         super();
 
         // Set initial state
+        this.tweets = TweetHelper.getLocalTweets();
         this.state = {
-            tweets: []
+            tweets: this.tweets
         };
 
-        socket.on('tweet', (tweet: any) => {
+        socket.on('tweet', (tweet: ITweet) => {
             this.tweets.unshift(tweet);
+
+            TweetHelper.setLocalTweets(this.tweets);
+
+            this.tweets = this.tweets.slice(0, 10);
 
             this.setState({
                 tweets: this.tweets
@@ -37,7 +45,7 @@ class Tweets extends React.Component<properties, componentState> {
                     <h2 className="ms-font-l">Number of tweets: <span>{this.state.tweets.length}</span></h2>
                     <ul>
                     {
-                        this.state.tweets.map((tweet: any, index: number) => {
+                        this.state.tweets.map((tweet: ITweet, index: number) => {
                             return (
                                 <li className="ms-font-m" key={index}>
                                     <div className="tweet">

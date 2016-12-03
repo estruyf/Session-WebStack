@@ -51,6 +51,8 @@ gulp.task('serve', () => {
         server: "./gulp"
     });
 
+    gulp.watch(['./gulp/sass/**/*.html'], server.notify);
+
     gulp.watch('./gulp/sass/**/*.scss', ['sass']).on('change', browserSync.reload);
 
     gulp.watch('./gulp/ts/**/*.ts', ['typescript']).on('change', browserSync.reload);
@@ -59,5 +61,5 @@ gulp.task('serve', () => {
 
 /* Remove all files */
 gulp.task('nuke', () => {
-    del(['./gulp/public/css/**', './gulp/public/js/**']);
+    del(['./gulp/public/css/**', './gulp/public/js/**', './webpack/src/**']);
 });

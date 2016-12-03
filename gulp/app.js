@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const open = require('open');
  
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../gulp/index.html'));
@@ -13,5 +14,6 @@ app.listen(8080, (error) => {
         return console.log('ERROR: ', error)
     }
 
-    console.log('Server is listening on 8080. Navigate to: http://localhost:8080')
+    console.log('Server is listening on 8080. Navigate to: http://localhost:8080');
+    open("http://localhost:8080");
 });
