@@ -3,12 +3,12 @@
     <head>
         <title>Node.js server demo</title>
         <link rel="stylesheet" href="https://spoprod-a.akamaihd.net/files/fabric/office-ui-fabric-core/4.1.0/css/fabric.min.css">
-        <!--<link rel='stylesheet' href='/public/css/style.css' type='text/css' media='all' />-->
-        <link rel='stylesheet' href='/css/style.css' type='text/css' media='all' />
+        <link rel='stylesheet' href='/public/css/style.css' type='text/css' media='all' />
+        <!--<link rel='stylesheet' href='/css/style.css' type='text/css' media='all' />-->
     </head>
     <body class="ms-font-su">
         <div class="ms-Grid">
-            <h1 class="ms-font-xl">Show tweets about <b>#Office365</b> | <b>#SharePoint</b> | <b>#SPSGeneva</b> | <b>JavaScript</b></h1>
+            <h1 class="ms-font-xl">Show tweets about <b>#Office365</b> | <b>#SharePoint</b> | <b>#SPSHel</b> | <b>#SPSHel2017</b> | <b>JavaScript</b> | <b>TypeScript</b></h1>
             <h2 class="ms-font-l">The following list shows the latest tweets:</h2>
             <ul class="tweets">
 
@@ -24,15 +24,15 @@
 
             System.config({
                 map: {
-                    "socket.io-client": 'https://cdn.socket.io/socket.io-1.4.5.js'
+                    "socket.io-client": 'https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js'
                 }
             });
 
             // loads /js/main.js
-            //SystemJS.import('/public/js/main.js');
-            SystemJS.import('/js/main.js');
+            SystemJS.import('/public/js/main.js');
+            // SystemJS.import('/js/main.js');
         </script>
-        <!--<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
         <script src="/js/main.js"></script>-->
     </body>
 </html>

@@ -55,7 +55,7 @@ class Tweets extends React.Component<properties, componentState> {
                                         <div className="info">
                                             <p>
                                                 <span className="handle">@{tweet.user.screen_name}</span>
-                                                <span className="time">{moment(tweet.created_at).format('HH:mm:ss')}</span>
+                                                <span className="time">{moment(tweet.created_at).format('DD/MM/YYYY HH:mm:ss')}</span>
                                             </p>
                                             <p className="tweetText">
                                                 {tweet.text}

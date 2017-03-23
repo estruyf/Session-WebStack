@@ -9,7 +9,7 @@ interface properties {}
 
 class Page extends React.Component<properties, {}> {
     render() {
-        var names = ["#Office365", "#SharePoint", "#SPSGeneva", "JavaScript"];
+        var names = ["#Office365", "#SharePoint", "#SPSGHel", "SPSHel2017", "JavaScript", "TypeScript"];
 
         return (
             <div className="ms-Grid">

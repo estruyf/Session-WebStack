@@ -4,14 +4,14 @@
         <title>Node.js server demo</title>
     </head>
     <body>
-        <h1>Show tweets about <b>#Office365</b> | <b>#SharePoint</b> | <b>#SPSGeneva</b> | <b>JavaScript</b></h1>
+        <h1>Show tweets about <b>#Office365</b> | <b>#SharePoint</b> | <b>#SPSHel</b> | <b>#SPSHel2017</b> | <b>JavaScript</b> | <b>TypeScript</b></h1>
         <ul class="tweets">
 
         </ul>
 
         <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
         <script>
-            var socket = io('http://localhost:80');
+            var socket = io('http://localhost:8000');
             var tweetsElm = document.querySelector('.tweets');
 
             if (typeof(Storage) !== "undefined") {

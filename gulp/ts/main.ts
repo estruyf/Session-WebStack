@@ -2,7 +2,7 @@ import * as io from 'socket.io-client';
 
 import { ITweet } from './ITweet';
 
-const socket = io('http://localhost:80');
+const socket = io('http://localhost:8000');
 const tweetsElm = document.querySelector('.tweets');
 
 if (tweetsElm !== null) {

@@ -2,7 +2,7 @@ const app = require('express')();
 const open = require('open');
  
 app.get('/', (req, res) => {
-    res.send('Hello SPSGeneva from Express!');
+    res.send('Hello SPSHelsinki from Express!');
 });
  
 app.listen(8080, (error) => {

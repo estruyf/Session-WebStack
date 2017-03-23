@@ -1,1 +1,1 @@
-console.log('Hello, SPSGeneva');
+console.log('Hello, SPSHelsinki 2017');

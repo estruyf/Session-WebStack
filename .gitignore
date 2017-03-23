@@ -4,3 +4,6 @@ links.txt
 
 gulp/public
 webpack/src
+
+*.log
+*.lock

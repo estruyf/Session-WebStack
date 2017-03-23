@@ -1,5 +1,5 @@
 const io = require('socket.io-client');
-const socket = io('http://localhost:80');
+const socket = io('http://localhost:8000');
 
 socket.on('tweet', (tweet) => {
     if (tweet !== null) {
