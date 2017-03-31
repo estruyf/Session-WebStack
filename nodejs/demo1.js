@@ -1,1 +1,1 @@
-console.log('Hello, SPSHelsinki 2017');
+console.log('Hello, BIWUG members. How are you all doing?');

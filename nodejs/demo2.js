@@ -7,8 +7,7 @@ const tw = new Twitter(cfg);
 
 tw.track('#office365');
 tw.track('#sharepoint');
-tw.track('#spshel');
-tw.track('#spshel2017');
+tw.track('#BIWUG');
 tw.track('javascript');
 tw.track('typescript');
 
